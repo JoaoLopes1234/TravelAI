@@ -1,4 +1,3 @@
-"""
 from dotenv import load_dotenv
 import os
 from langchain_core.messages import SystemMessage, HumanMessage
@@ -14,17 +13,16 @@ modelo = ChatOpenAI(model="gpt-4o-mini")
 
 parser = StrOutputParser()
 
-
-
 template_messages = ChatPromptTemplate.from_messages([
-    ("system", "Qual a {informação} do país a seguir"),
-    ("user", "{país}"),
+    ("system", "És uma inteligência artificial de viagens, responde a próxima questão"),
+    ("user", "{informação}"),
 ])
 
 chain = template_messages | modelo | parser
 
+def answer(request):
+    response = chain.invoke({"informação":request})
+    return response
 #text = chain.invoke({"informação":"rio", "país":"França"})
 
 #print(text)
-
-"""
