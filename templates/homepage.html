@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Viagens</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Bem-vindo ao Programa de Viagens!</h1>
+        <p>Descubra destinos incríveis ao redor do mundo com Inteligência artificial.</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Destinos</a>
+        <a href="#">Promoções</a>
+        <a href="#">Contato</a>
+    </nav>
+
+        <form action="/process" method="post" class="hero">
+            <h1>Explore o Mundo!</h1>
+            <h2>Qual o seu destino de sonho? Inteligência Artifical irá ajudar-te a fazer um roteiro fantástico </h2>
+            <input type="text" placeholder="Chatgpt irá responder-te" name="prompt">
+        </form>
+
+    <section>
+        <h2>Destinos Populares</h2>
+        <div class="destinos">
+            <div class="destino">
+                <img src="https://example.com/destination1.jpg" alt="Destino 1">
+                <h2>Paris</h2>
+                <p>A cidade das luzes, com sua rica cultura, gastronomia e história.</p>
+            </div>
+            <div class="destino">
+                <img src="https://example.com/destination2.jpg" alt="Destino 2">
+                <h2>Maldivas</h2>
+                <p>Um paraíso tropical com praias deslumbrantes e águas cristalinas.</p>
+            </div>
+            <div class="destino">
+                <img src="https://example.com/destination3.jpg" alt="Destino 3">
+                <h2>Nova York</h2>
+                <p>A cidade que nunca dorme, com sua agitação, vida cultural e grandes atrações.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Programa de Viagens. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
