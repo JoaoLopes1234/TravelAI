@@ -6,7 +6,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain.memory import ConversationBufferMemory
 from openai import OpenAI
 
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="")
 
 
 def answer(message, list_of_messages=[]):
