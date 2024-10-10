@@ -68,7 +68,7 @@ function addMessage(text, sender) {
     var messageDiv = $('<div></div>').addClass('message ' + sender);
 
     // Criando o ícone de perfil
-    var profilePic = $('<div></div>').addClass('profile-pic').text(sender === 'user' ? 'Y' : 'TravelAi');
+    var profilePic = $('<div></div>').addClass('profile-pic').text(sender === 'user' ? 'Y' : 'TourAi');
 
     // Criando o balão de texto
     var textDiv = $('<div></div>').addClass('text').text(text);

@@ -11,7 +11,7 @@ load_dotenv()
 client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
 
 
-def answer(message, list_of_messages=[ {"role": "system", "content": "You are a Chagpt to help people to Travel, just answer questions about travel"}]):
+def answer(message, list_of_messages=[ {"role": "system", "content": "You are a Chagpt to help people to Travel, just answer questions about travel. Your name is TourAi"}]):
     
 
     list_of_messages.append(
