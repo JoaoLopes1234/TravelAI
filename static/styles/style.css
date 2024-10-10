@@ -9,7 +9,7 @@ body {
 header {
     background-color: #4CAF50;
     color: white;
-    padding: 20px 0;
+    padding: 5px 0;
     text-align: center;
 }
 
@@ -106,7 +106,7 @@ body {
 
 .chat-body {
     padding: 20px;
-    height: 600px;
+    height: 450px;
     overflow-y: auto;
     background-color: #f9f9f9;
 }
