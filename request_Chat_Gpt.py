@@ -1,9 +1,5 @@
 from dotenv import load_dotenv
 import os
-from langchain_core.messages import SystemMessage, HumanMessage
-from langchain_openai import ChatOpenAI
-from langchain_core.prompts import ChatPromptTemplate
-from langchain.memory import ConversationBufferMemory
 from openai import OpenAI
 
 load_dotenv()

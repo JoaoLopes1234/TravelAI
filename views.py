@@ -1,5 +1,5 @@
 from server import app
-from flask import render_template, request, redirect, url_for, jsonify
+from flask import render_template, request
 from request_Chat_Gpt import *
 
 @app.route('/')
