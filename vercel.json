@@ -1,5 +1,9 @@
 {
-    "rewrites": [
-        {"source": "/(.*)", "destination": "/templates/homepage.html"}
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/templates/homepage.html"
+      }
     ]
-}
+  }
+  
