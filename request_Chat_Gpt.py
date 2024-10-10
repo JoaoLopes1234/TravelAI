@@ -11,10 +11,13 @@ load_dotenv()
 client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
 
 
-def answer(message, list_of_messages=[]):
+def answer(message, list_of_messages=[ {"role": "system", "content": "You are a Chagpt to help people to Travel, just answer questions about travel"}]):
+    
+
     list_of_messages.append(
         {"role": "user", "content": message}
     )
+    print(list_of_messages) 
     chat_completion = client.chat.completions.create(
         messages=list_of_messages,
         model= "gpt-3.5-turbo",
