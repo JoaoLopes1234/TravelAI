@@ -6,7 +6,9 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain.memory import ConversationBufferMemory
 from openai import OpenAI
 
-client = OpenAI(api_key="")
+load_dotenv()
+
+client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
 
 
 def answer(message, list_of_messages=[]):
@@ -15,7 +17,7 @@ def answer(message, list_of_messages=[]):
     )
     chat_completion = client.chat.completions.create(
         messages=list_of_messages,
-        model= "gpt-4o-mini",
+        model= "gpt-3.5-turbo",
     )
     print("Total de tokens usados: ", chat_completion.usage.total_tokens)
     response = chat_completion.choices[0].message.content

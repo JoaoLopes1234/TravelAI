@@ -1,5 +1,5 @@
 from server import app
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, jsonify
 from request_Chat_Gpt import *
 
 @app.route('/')
@@ -9,9 +9,14 @@ def homepage():
 
 @app.route('/process', methods=["POST"])
 def process():
-    prompt = request.form["prompt"]
+
+    data = request.get_json()
+
+    prompt = data.get('prompt', '')
     response =  answer(prompt)
-    return redirect(url_for('result', prompt=response))
+    #return redirect(url_for('result', prompt=response))
+
+    return {"response": response}
 
 
 @app.route('/result')
