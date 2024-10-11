@@ -38,12 +38,14 @@ function sendMessage(event) {
                 headers: {
                     "Content-Type": "application/json" // Define o cabeçalho para JSON
                 },
-                body: JSON.stringify({ prompt: "Translate this message into the language I'm speaking in previous messages: 'Click here to see essential travel products for your destination', only translate what's in quotation marks and remove the quotation marks, don't reply to me any further" }) // Envia o prompt em formato JSON
+                body: JSON.stringify({ prompt: "Translate this message into the language I'm speaking in previous messages: 'Click here to see essential travel products for your destination:<a href=https://s.click.aliexpress.com/e/_DESh55L> Here </a> ', only translate what's in quotation marks and REMOVE the quotation marks, don't reply to me any further, this is about travel" }) // Envia o prompt em formato JSON
             })
                 .then(response => response.json()) // Converte a resposta para JSON
                 .then(data => {
                     // Aqui você pega o valor da resposta retornada
                     const resultText = data.response;
+                    console.log(resultText);
+                    
 
                     // Mensagem do usuário
                     addMessage(resultText, 'bot'); // Mensagem da IA (bot)
@@ -71,7 +73,7 @@ function addMessage(text, sender) {
     var profilePic = $('<div></div>').addClass('profile-pic').text(sender === 'user' ? 'Y' : 'TourAi');
 
     // Criando o balão de texto
-    var textDiv = $('<div></div>').addClass('text').text(text);
+    var textDiv = $('<div></div>').addClass('text').html(text);
 
     // Adicionando o ícone e o balão ao contêiner da mensagem
     messageDiv.append(profilePic).append(textDiv);
