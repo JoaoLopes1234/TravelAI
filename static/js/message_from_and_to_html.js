@@ -4,14 +4,15 @@ let promptCounter = 0;
 
 function sendMessage(event) {
 
-    promptCounter++;
+
 
     event.preventDefault();
 
 
     var userInput = $("#user-input").val();
-    addMessage(userInput, 'user');
+
     if (userInput.trim() !== "") {
+        addMessage(userInput, 'user');
         fetch("/process", {
             method: "POST",
             headers: {
@@ -45,7 +46,7 @@ function sendMessage(event) {
                     // Aqui você pega o valor da resposta retornada
                     const resultText = data.response;
                     console.log(resultText);
-                    
+
 
                     // Mensagem do usuário
                     addMessage(resultText, 'bot'); // Mensagem da IA (bot)
@@ -57,7 +58,7 @@ function sendMessage(event) {
 
         }
 
-
+        promptCounter++;
     }
 }
 
@@ -70,7 +71,7 @@ function addMessage(text, sender) {
     var messageDiv = $('<div></div>').addClass('message ' + sender);
 
     // Criando o ícone de perfil
-    var profilePic = $('<div></div>').addClass('profile-pic').text(sender === 'user' ? 'Y' : 'TourAi');
+    var profilePic = $('<div></div>').addClass('profile-pic').text(sender === 'user' ? 'You' : 'TourAi');
 
     // Criando o balão de texto
     var textDiv = $('<div></div>').addClass('text').html(text);
@@ -80,7 +81,14 @@ function addMessage(text, sender) {
 
     // Adicionando a mensagem ao corpo do chat
     chatBody.append(messageDiv);
-
     // Rolando o chat para a parte inferior
     chatBody.scrollTop(chatBody[0].scrollHeight);
+
+
 }
+$(document).ready(function () {
+
+    var message = "Welcome to Tour Ai, here you can ask me whatever you want about travels, I will respond as clearly and completely as possible."
+
+    addMessage(message, 'bot')
+})
