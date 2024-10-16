@@ -6,6 +6,9 @@ from request_Chat_Gpt import *
 def homepage():
     return render_template("homepage.html")
 
+@app.route('/pdf')
+def pdf():
+    return render_template("pdf.html")
 
 @app.route('/process', methods=["POST"])
 def process():
