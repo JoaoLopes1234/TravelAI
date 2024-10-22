@@ -1,4 +1,4 @@
-<p align="center">🌍 Welcome to **Tour AI**! A chatbot based on ChatGPT, developed to help you explore the world of travel. ✈️
+<p align="center">🌍 Welcome to <strong>Tour AI</strong>! A chatbot based on ChatGPT, developed to help you explore the world of travel. ✈️
 
 In this project, users can interact directly with the chatbot, receiving personalized information and recommendations about destinations and travel experiences.</p>
 
