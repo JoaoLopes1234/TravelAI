@@ -1,4 +1,4 @@
 *.env
 .vercel/
 *.txt
-
+templates/pdf.html
